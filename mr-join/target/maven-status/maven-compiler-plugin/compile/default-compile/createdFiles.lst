@@ -1,0 +1,6 @@
+mapreduce\mr_join\App$RecordMapper$RecordType.class
+mapreduce\mr_join\App$RecordReducer$RecordType.class
+mapreduce\mr_join\App$RecordReducer.class
+mapreduce\mr_join\App$RecordMapper.class
+mapreduce\mr_join\App.class
+mapreduce\mr_join\App$RecordPartitioner.class

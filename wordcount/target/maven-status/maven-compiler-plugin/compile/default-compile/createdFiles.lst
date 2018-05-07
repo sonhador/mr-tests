@@ -1,0 +1,3 @@
+mapreduce\wordcount\App$WordReducer.class
+mapreduce\wordcount\App$WordMapper.class
+mapreduce\wordcount\App.class
