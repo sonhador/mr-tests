@@ -1,0 +1,38 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'sonhador'
+version = '0.0.1-SNAPSHOT'
+
+description = """parquet-mr-converter"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'org.apache.hadoop', name: 'hadoop-client', version:'2.7.7'
+    compile group: 'org.apache.parquet', name: 'parquet-hadoop', version:'1.8.2'
+    compile group: 'org.apache.parquet', name: 'parquet-common', version:'1.8.2'
+    compile group: 'org.apache.parquet', name: 'parquet-format', version:'2.4.0'
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+}
+
+jar {
+    from {
+        (configurations.runtime).collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    manifest {
+        attributes("Main-Class": "sonhador.parquet_mr_converter.App" )
+    }
+}
